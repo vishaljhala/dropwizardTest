@@ -1,4 +1,4 @@
-package com.code_craft.dropwizardTest.health;
+package com.code_craft.aether.health;
 
 import com.codahale.metrics.health.HealthCheck;
 

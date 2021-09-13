@@ -11,7 +11,7 @@
  * specific language governing permissions and limitations under the License.
  */
 
-package com.code_craft.dropwizardTest.util;
+package com.code_craft.aether.util;
 
 import static com.google.common.base.Preconditions.checkArgument;
 

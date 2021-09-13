@@ -1,4 +1,4 @@
-package com.code_craft.dropwizardTest.datastructures.config;
+package com.code_craft.aether.datastructures.config;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

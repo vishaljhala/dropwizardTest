@@ -1,0 +1,20 @@
+version: '3.1'
+services:
+  database:
+    image: postgres
+    environment:
+      POSTGRES_USER: aether 
+      POSTGRES_PASSWORD: aether 
+      POSTGRES_DB: aether 
+    networks:
+      aether_network:
+        aliases:
+          - aether_network
+    volumes: 
+      - database-data:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+networks:
+  aether_network:
+volumes:
+  database-data: ~

@@ -1,32 +1,54 @@
 ethNode: 
-  url: https://pokeapi.co/api/v2/pokemon/ditto
-  port: 443 
+  url: http://localhost
+  port: 5051
   connectionTimeout: 2000
   readTimeout: 5000
 logging:
-  level: INFO 
-  # appenders:
-  #   - type: file
-  #     currentLogFilename: /tmp/dropwizardTest.log
-  #     threshold: INFO 
-  #     queueSize: 512
-  #     archive: true
-  #     archivedLogFilenamePattern: /tmp/dropwizardTest-%d.log
-  #     archivedFileCount: 5
-  #     timeZone: UTC
-  #     logFormat: "%-5p [%d{ISO8601,UTC}] %c: %m%n%rEx"
-  #     bufferSize: 8KiB
-  #     immediateFlush: true
-  #   - type: file
-  #     currentLogFilename: /tmp/dropwizardTest_debug.log
-  #     threshold: DEBUG 
-  #     queueSize: 512
-  #     archive: true
-  #     archivedLogFilenamePattern: /tmp/dropwizardTest_debug-%d.log
-  #     archivedFileCount: 5
-  #     timeZone: UTC
-  #     logFormat: "%-5p [%d{ISO8601,UTC}] %c: %m%n%rEx"
-  #     bufferSize: 8KiB
-  #     immediateFlush: true
+  level: ALL 
+  appenders:
+    - type: console
+      threshold: WARN
+    - type: file
+      currentLogFilename: /tmp/aether.log
+      threshold: INFO 
+      queueSize: 512
+      archive: true
+      archivedLogFilenamePattern: /tmp/aether-%d.log
+      archivedFileCount: 5
+      timeZone: UTC
+      logFormat: "%-5p [%d{ISO8601,UTC}] %c: %m%n%rEx"
+      bufferSize: 8KiB
+      immediateFlush: true
+    - type: file
+      currentLogFilename: /tmp/aether_debug.log
+      threshold: DEBUG 
+      queueSize: 512
+      archive: true
+      archivedLogFilenamePattern: /tmp/aether_debug-%d.log
+      archivedFileCount: 5
+      timeZone: UTC
+      logFormat: "%-5p [%d{ISO8601,UTC}] %c: %m%n%rEx"
+      bufferSize: 8KiB
+      immediateFlush: true
 defaultName: Stranger
 template: Hello, %s!
+database:
+  driverClass: org.postgresql.Driver
+  user: aether 
+  password: aether 
+  url: jdbc:postgresql://localhost:5432/aether
+  # any properties specific to your JDBC driver:
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.show_sql: true 
+  # the maximum amount of time to wait on an empty pool before throwing an exception
+  maxWaitForConnection: 1s
+  # the SQL query to run when validating a connection's liveness
+  validationQuery: "/* MyApplication Health Check */ SELECT 1"
+  # the minimum number of connections to keep open
+  minSize: 8
+  # the maximum number of connections to keep open
+  maxSize: 32
+  # whether or not idle connections should be validated
+  checkConnectionWhileIdle: false

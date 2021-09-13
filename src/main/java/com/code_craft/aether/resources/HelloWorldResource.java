@@ -1,6 +1,6 @@
-package com.code_craft.dropwizardTest.resources;
+package com.code_craft.aether.resources;
 
-import com.code_craft.dropwizardTest.api.Saying;
+import com.code_craft.aether.api.Saying;
 import com.codahale.metrics.annotation.Timed;
 
 import javax.ws.rs.GET;

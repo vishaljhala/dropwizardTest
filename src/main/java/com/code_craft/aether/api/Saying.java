@@ -1,4 +1,4 @@
-package com.code_craft.dropwizardTest.api;
+package com.code_craft.aether.api;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
