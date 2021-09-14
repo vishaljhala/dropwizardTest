@@ -45,10 +45,14 @@
     <groupId>jakarta.validation</groupId>
     <artifactId>jakarta.validation-api</artifactId>
   </dependency>
-  <dependency>
-    <groupId>io.dropwizard</groupId>
-    <artifactId>dropwizard-hibernate</artifactId>
-  </dependency>
+  <dependency>                                
+    <groupId>ru.vyarus</groupId>              
+    <artifactId>dropwizard-guicey</artifactId>
+  </dependency>                               
+  <!-- <dependency> -->
+  <!--   <groupId>io.dropwizard</groupId> -->
+  <!--   <artifactId>dropwizard-hibernate</artifactId> -->
+  <!-- </dependency> -->
   <dependency>
     <groupId>io.dropwizard</groupId>
     <artifactId>dropwizard-migrations</artifactId>

@@ -28,6 +28,6 @@ public class FetchBlock implements Runnable {
   @Override
   public void run() {
 
-    UInt64 slotId = UInt64.valueOf(blockDAO.getMaxBlockId());
+    // UInt64 slotId = UInt64.valueOf(blockDAO.getMaxBlockId());
   }
 }
