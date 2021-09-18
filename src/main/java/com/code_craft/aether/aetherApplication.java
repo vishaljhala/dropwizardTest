@@ -5,6 +5,7 @@ import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 // import com.code_craft.aether.core.*;
 import ru.vyarus.dropwizard.guice.GuiceBundle;
+import com.code_craft.aether.db.BlockDAO;
 // import io.dropwizard.hibernate.HibernateBundle;
 // import io.dropwizard.db.DataSourceFactory;
 // import com.code_craft.aether.db.AetherDBSessionFactory;
@@ -14,7 +15,6 @@ public class aetherApplication extends Application<aetherConfiguration> {
   public static void main(final String[] args) throws Exception {
     new aetherApplication().run(args);
   }
-
 
   // private final HibernateBundle<aetherConfiguration> hibernate = new HibernateBundle<aetherConfiguration>(Block.class) {
   //   @Override

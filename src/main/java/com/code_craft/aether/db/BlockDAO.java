@@ -11,8 +11,12 @@ package com.code_craft.aether.db;
 // import java.io.PrintWriter;
 // import com.code_craft.aether.core.Block;
 // import java.util.List;
+import org.jdbi.v3.sqlobject.customizer.Bind;
+import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
 public interface BlockDAO {
+  @SqlQuery("select * from BLOCKDAO where pk = :id")
+  String findNameById(@Bind("pk") int id);
 
   // public BlockDAO() {
   // }
@@ -54,3 +58,4 @@ public interface BlockDAO {
   //   return 0;
   // }
 }
+
