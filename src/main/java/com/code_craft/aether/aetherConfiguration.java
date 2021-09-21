@@ -1,11 +1,15 @@
 package com.code_craft.aether;
 
-import io.dropwizard.Configuration;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import javax.validation.constraints.*;
-import com.code_craft.aether.datastructures.config.EthNode;
-import io.dropwizard.db.DataSourceFactory;
+import javax.inject.Qualifier;
 import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+
+import com.code_craft.aether.datastructures.config.EthNode;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import io.dropwizard.Configuration;
+import io.dropwizard.db.DataSourceFactory;
 
 public class aetherConfiguration extends Configuration {
   @Valid
@@ -20,7 +24,7 @@ public class aetherConfiguration extends Configuration {
   @JsonProperty("database")
   public void setDataSourceFactory(DataSourceFactory dataSourceFactory) {
     this.database = dataSourceFactory;
-  }
+  } 
 
   @NotEmpty
   private String template;

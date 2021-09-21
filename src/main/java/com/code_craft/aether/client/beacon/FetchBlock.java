@@ -1,33 +1,42 @@
 package com.code_craft.aether.client.beacon;
 
-import javax.ws.rs.client.Client;
-import com.code_craft.aether.aetherConfiguration;
-import com.code_craft.aether.util.UInt64;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import javax.inject.Inject;
 import javax.inject.Singleton;
+import javax.ws.rs.client.Client;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.code_craft.aether.aetherConfiguration;
 import com.code_craft.aether.db.BlockDAO;
 
-@Singleton
-public class FetchBlock implements Runnable {
+import io.dropwizard.lifecycle.Managed;
 
-  private Client client;
+@Singleton
+public class FetchBlock implements Managed {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(FetchBlock.class);
 
+  private Client client;
+  
   @Inject
-  aetherConfiguration aetherConfig;
+  BlockDAO blockDao;
 
   @Inject
-  private BlockDAO blockDAO;
-
   public FetchBlock() {
+	  
   }
 
   @Override
-  public void run() {
-
-    // UInt64 slotId = UInt64.valueOf(blockDAO.getMaxBlockId());
+  public void start() throws Exception {
+    LOGGER.info("BeaconService Started");
+    System.out.println(">>>>>>>>>>>>" + blockDao.getAll().get(0).getVersion());
   }
+
+  @Override
+  public void stop() throws Exception {
+    LOGGER.info("BeaconService stopped");
+   // service.shutdown();
+  }
+
 }

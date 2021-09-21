@@ -1,14 +1,16 @@
 package com.code_craft.aether.client.beacon;
 
-import io.dropwizard.lifecycle.Managed;
-import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+
+import javax.inject.Inject;
+import javax.inject.Singleton;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import javax.inject.Singleton;
-import javax.inject.Inject;
-import com.code_craft.aether.aetherConfiguration;
+
+import io.dropwizard.lifecycle.Managed;
 
 @Singleton
 public class BeaconService implements Managed {
@@ -25,7 +27,7 @@ public class BeaconService implements Managed {
   @Override
   public void start() throws Exception {
     LOGGER.info("BeaconService Started");
-    service.schedule(fetchBlock, 1, TimeUnit.SECONDS);
+    //service.schedule(fetchBlock, 1, TimeUnit.SECONDS);
   }
 
   @Override
