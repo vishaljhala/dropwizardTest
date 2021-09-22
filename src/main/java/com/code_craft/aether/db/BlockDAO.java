@@ -1,4 +1,7 @@
 package com.code_craft.aether.db;
+import java.util.List;
+
+import org.jdbi.v3.sqlobject.config.RegisterBeanMapper;
 // import com.code_craft.aether.db.AetherDBSessionFactory;
 // import javax.inject.Inject;
 // import javax.inject.Singleton;
@@ -14,9 +17,14 @@ package com.code_craft.aether.db;
 import org.jdbi.v3.sqlobject.customizer.Bind;
 import org.jdbi.v3.sqlobject.statement.SqlQuery;
 
+@RegisterBeanMapper(blocks.class)
 public interface BlockDAO {
-  @SqlQuery("select * from BLOCKDAO where pk = :id")
-  String findNameById(@Bind("pk") int id);
+	
+  @SqlQuery("select * from blocks where pk = :id")
+  String findNameById(@Bind("id") int id);
+  
+  @SqlQuery("select * from blocks")
+  List<blocks> getAll();
 
   // public BlockDAO() {
   // }

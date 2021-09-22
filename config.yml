@@ -33,14 +33,14 @@ logging:
 defaultName: Stranger
 template: Hello, %s!
 database:
-  driverClass: org.postgresql.Driver
-  user: aether 
-  password: aether 
-  url: jdbc:postgresql://localhost:5432/aether
+  driverClass: com.mysql.cj.jdbc.Driver
+  user: root 
+  password: qmetry 
+  url: jdbc:mysql://localhost:3306/qmetry
   # any properties specific to your JDBC driver:
   properties:
     charSet: UTF-8
-    hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate.dialect: org.hibernate.dialect.MySQLDialect
     hibernate.show_sql: true 
   # the maximum amount of time to wait on an empty pool before throwing an exception
   maxWaitForConnection: 1s
